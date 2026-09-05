@@ -22,13 +22,19 @@ jobs:
           cache: gradle
           
       - name: Setup Android SDK
-        uses: android-actions/setup-android@v2
+        uses: android-actions/setup-android@v3
+        
+      - name: Cache SDK
+        uses: actions/cache@v4
         with:
-          sdk-version: 34
-          build-tools-version: 34.0.0
-      
-      - name: Accept Android licenses
-        run: yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses || true
+          path: |
+            ~/.android/android-sdk
+            ~/Android/Sdk
+          key: ${{ runner.os }}-android-sdk-${{ hashFiles('**/gradle/libs.versions.toml') }}
+          
+      - name: Install SDK components
+        run: |
+          echo "y" | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_HOME "platforms;android-34" "build-tools;34.0.0" "platform-tools"
         
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
