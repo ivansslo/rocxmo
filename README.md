@@ -25,5 +25,5 @@ Download the latest APK from the [Releases Section](https://github.com/ivansslo/
 
 ## Community
 > [!TIP]
-Join the reTerminal community to stay updated and engage with other users:
-- [Telegram](https://t.me/reTerminal)
+Join the rocxmo community to stay updated and engage with other users:
+- [Telegram](https://t.me/rocxmo)
