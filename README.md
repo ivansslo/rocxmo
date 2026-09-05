@@ -27,3 +27,4 @@ Download the latest APK from the [Releases Section](https://github.com/ivansslo/
 > [!TIP]
 Join the rocxmo community to stay updated and engage with other users:
 - [Telegram](https://t.me/rocxmo)
+# Debug build
