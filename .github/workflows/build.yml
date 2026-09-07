@@ -27,8 +27,19 @@ jobs:
           api-level: 34
           build-tools: 34.0.0
           
+      - name: Set ANDROID_HOME
+        run: |
+          echo "ANDROID_HOME=$ANDROID_HOME" >> $GITHUB_ENV
+          echo "ANDROID_SDK_ROOT=$ANDROID_HOME" >> $GITHUB_ENV
+          echo "SDK manager path: $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager"
+          
       - name: Accept licenses
-        run: yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses || true
+        run: |
+          if [ -f "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" ]; then
+            yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses || true
+          elif [ -f "$ANDROID_HOME/tools/bin/sdkmanager" ]; then
+            yes | $ANDROID_HOME/tools/bin/sdkmanager --licenses || true
+          fi
         
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
