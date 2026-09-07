@@ -5,6 +5,8 @@ If you're interested in keeping the project alive, contributions are very welcom
 
 
 # rocxmo
+
+**Author:** Ivan Ssl
 **rocxmo** is a sleek, Material 3-inspired terminal emulator designed as a modern alternative to the legacy [Jackpal Terminal](https://github.com/jackpal/Android-Terminal-Emulator). Built on [Termux's](https://github.com/termux/termux-app) robust TerminalView
 
 Download the latest APK from the [Releases Section](https://github.com/ivansslo/rocxmo/releases/latest).
